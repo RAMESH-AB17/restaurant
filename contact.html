@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <style>
+        nav{
+             text-align: end;
+              word-spacing: 15px;
+             padding: 40px;
+        }
+        a{
+            text-decoration: none;
+            text-align: center;
+            background-color: red ;
+            color: white;
+            padding: 7px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        .left{
+           float: left;
+           border: 2px solid black ;
+           border-radius: 10px;
+           padding: 30px;
+           margin-left: 8%;
+           margin-top: 40px;
+        }
+        .right{
+         float: right;
+         border: 2px solid black ;
+         border-radius: 10px;
+         padding: 70px;
+         width: 25%;
+         margin-top: 40px;
+         margin-right: 7%;
+        }
+        header{
+            background-color: white;
+            height: 80px;
+        }
+        section{
+            background-color: rgb(173, 182, 191) ;
+            height: 550px;
+        }
+        .A{
+            width: 60px;
+            margin-right: 100%;
+            padding: 10px;
+        }
+        img{
+            border: 4px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <!-- <img class="A" src="logo.png"> -->
+        <a href="home.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <!-- <a href="list.html">LIST</a> -->
+        <a href="menu.html">MENU</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+<section>
+    <div class="left">
+    <form onsubmit="return validationForm()">
+      <center><p> Feed Back <p></center>
+        username:<input type="text" id="username" ><br><br>
+        ph_no:   <input type="text" id="ph_no" ><br><br>
+        password: <input type="text" id="password" ><br><br>
+        <div>
+            <label>Select Branch:</label>
+            <select>
+                <option value=""></option>
+                <option value="Gandhipuram">Gandhipuram</option>
+                <option value="chitra nagar">chitra nagar</option>
+                <option value="peelamedu">peelamedu</option>
+                <option value="Rs puram">Rs puram</option>
+            </select><br><br>
+    <label>Food quality:</label>
+    <input type="radio" id="excellent" name="quality" value="excellent" >
+    <label for="excellent">Excellent</label>
+     <input type="radio" id="good" name="quality" value="good"> 
+     <label for="good">Good</label>
+     <input type="radio" id="average" name="quality" value="average">
+     <label for="average">Average</label>
+     <input type="radio" id="poor" name="quality" value="poor">
+     <label for="poor">Poor</label> 
+    <p>Rate our service:
+    <input type="radio" id="excellent" name="service" value="excellent" >
+    <label for="excellent">Excellent</label>
+    <input type="radio" id="good" name="service" value="good">
+    <label for="good">Good</label>
+    <input type="radio" id="average" name="service" value="average">
+    <label for="average">Average</label>
+    <input type="radio" id="poor" name="service" value="poor">
+    <label for="poor">Poor</label>
+    </p>
+</div>
+    <div>
+        <!-- <label for="comments">Comments:</label><br><br>
+        <textarea id="comments" name="comments" rows="4" cols="40" ></textarea><br><br> -->
+        <center><input type="submit"></center>
+      </div>
+    </form>
+    <script>
+        function validationForm(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var ph_no = document.getElementById("ph_no").value;
+            var mobileno = /^[0-9]{10}$/;
+            if(username==null||username==""){
+                alert("name can't be blank");
+                return false;
+            }
+
+            if(password.length<6){
+                alert("password must be greater than 6 character");
+                return false;
+            }
+            if(!ph_no.match(mobileno)){
+                alert("enter valid phno");
+                return false;
+            }
+            return true;
+        }
+</script>
+</div>
+<div class="right">
+<b>Address:</b> 573,Sasthri, Avinashi Rd, opp. KMCH Hospital, Chitra Nagar, Coimbatore Tamil Nadu 641014<br><br>
+<b>ph-no:</b> 09524137373<br><br><br>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62655.70549762229!2d76.96824122167966!3d11.040006700000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857c7433485db%3A0xaeabdf32528333a3!2sAmbur%20Star%20Briyani!5e0!3m2!1sen!2sin!4v1710152577177!5m2!1sen!2sin" width="300" height="200" style="border: 4px solid rgb(46, 146, 44);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</section>
+</body>
+</html>
